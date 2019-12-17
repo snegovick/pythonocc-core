@@ -101,7 +101,7 @@ enum  {
 %wrap_handle(Font_FTLibrary)
 %wrap_handle(Font_FontMgr)
 %wrap_handle(Font_SystemFont)
-%wrap_handle(Font_BRepFont)
+
 /* end handles declaration */
 
 /* templates */
@@ -1120,7 +1120,6 @@ class Font_BRepFont : protected Font_FTFont {
 };
 
 
-%make_alias(Font_BRepFont)
 
 %extend Font_BRepFont {
 	%pythoncode {
