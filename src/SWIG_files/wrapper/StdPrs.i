@@ -71,6 +71,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdprs.html"
 #include<V3d_module.hxx>
 #include<SelectMgr_module.hxx>
 #include<Select3D_module.hxx>
+#include<Font_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>

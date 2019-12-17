@@ -70,6 +70,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tprsstd.html"
 #include<V3d_module.hxx>
 #include<Graphic3d_module.hxx>
 #include<StdSelect_module.hxx>
+#include<Font_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>

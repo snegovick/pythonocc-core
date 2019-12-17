@@ -76,6 +76,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafprs.html"
 #include<CDM_module.hxx>
 #include<PCDM_module.hxx>
 #include<StdSelect_module.hxx>
+#include<Font_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>

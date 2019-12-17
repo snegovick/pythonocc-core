@@ -60,6 +60,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_ais.html"
 #include<TColgp_module.hxx>
 #include<Select3D_module.hxx>
 #include<DsgPrs_module.hxx>
+#include<Font_module.hxx>
 #include<Poly_module.hxx>
 #include<Image_module.hxx>
 #include<TopTools_module.hxx>
@@ -96,6 +97,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_ais.html"
 %import TColgp.i
 %import Select3D.i
 %import DsgPrs.i
+%import Font.i
 %import Poly.i
 %import Image.i
 /* public enums */

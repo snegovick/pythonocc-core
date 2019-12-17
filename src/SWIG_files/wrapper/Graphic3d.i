@@ -46,6 +46,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_graphic3d.html"
 #include<gp_module.hxx>
 #include<Aspect_module.hxx>
 #include<TCollection_module.hxx>
+#include<Font_module.hxx>
 #include<Geom_module.hxx>
 #include<Bnd_module.hxx>
 #include<TColStd_module.hxx>
@@ -71,6 +72,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_graphic3d.html"
 %import gp.i
 %import Aspect.i
 %import TCollection.i
+%import Font.i
 %import Geom.i
 %import Bnd.i
 %import TColStd.i

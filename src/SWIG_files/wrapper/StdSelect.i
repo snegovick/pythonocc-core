@@ -61,6 +61,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdselect.html"
 #include<TopTools_module.hxx>
 #include<Quantity_module.hxx>
 #include<TopTools_module.hxx>
+#include<Font_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
