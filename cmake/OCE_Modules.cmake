@@ -208,6 +208,7 @@ LIST(APPEND OCE_TOOLKIT_VISUALIZATION
 
 # TKService
 	Aspect
+	Font
 	SelectBasics
 	Image
 	InterfaceGraphic
