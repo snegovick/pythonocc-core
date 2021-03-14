@@ -251,10 +251,10 @@ void Display3d::Test()
 
 void Display3d::MakeCurrent()
 {
-      m_GLcontext->MakeCurrent();
+      myGLContext->MakeCurrent();
 }
 
 void Display3d::SwapBuffers()
 {
-      m_GLcontext->SwapBuffers();
+      myGLContext->SwapBuffers();
 }

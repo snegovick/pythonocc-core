@@ -82,7 +82,7 @@ protected:
    Handle_AIS_InteractiveContext myAISContext;
    Handle_V3d_Viewer myV3dViewer;
    Handle_V3d_View myV3dView;
-   OpenGl_Context myGLContext;
+   OpenGl_Context *myGLContext;
 
    int mySizeX;
    int mySizeY;
