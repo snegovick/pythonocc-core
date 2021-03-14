@@ -69,6 +69,7 @@ Standard_Boolean Display3d::InitOffscreen(int size_x, int size_y)
     GetGraphicDriver() = new OpenGl_GraphicDriver (aDisplayConnection);
   }
   printf("Graphic_Driver created.\n");
+  GetGraphicDriver()->ChangeOptions().buffersNoSwap = Standard_True;
   // Create V3dViewer and V3d_View
   myV3dViewer = new V3d_Viewer(GetGraphicDriver());
   printf("V3d_Viewer created.\n");
