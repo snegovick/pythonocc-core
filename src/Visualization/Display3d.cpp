@@ -186,6 +186,8 @@ void Display3d::Init(long window_handle)
                                (Aspect_Handle) window_handle);
       printf("Xw_Window created.\n");
   #endif
+  myGLContext = new OpenGl_Context();
+  myGLContext->Init(Standard_True);
   myV3dView->SetWindow(myWindow);
   if (!myWindow->IsMapped()) myWindow->Map();
   printf("Display3d class successfully initialized.\n");
@@ -245,4 +247,14 @@ void Display3d::Test()
       myAISContext->Display(anAISShape, Standard_False);
       myV3dView->ZFitAll();
       myV3dView->FitAll();
+}
+
+void Display3d::MakeCurrent()
+{
+      m_GLcontext->MakeCurrent();
+}
+
+void Display3d::SwapBuffers()
+{
+      m_GLcontext->SwapBuffers();
 }

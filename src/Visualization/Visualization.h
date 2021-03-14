@@ -69,6 +69,8 @@ public:
 	Standard_EXPORT Handle_V3d_Viewer& GetViewer() {return myV3dViewer;};
 	Standard_EXPORT Handle_AIS_InteractiveContext GetContext() {return myAISContext;};
 	Standard_EXPORT void Test();
+	Standard_EXPORT void MakeCurrent();
+	Standard_EXPORT void SwapBuffers();
 
   Standard_EXPORT bool IsOffscreen();
   Standard_EXPORT bool InitOffscreen(int size_x, int size_y);
@@ -80,6 +82,7 @@ protected:
    Handle_AIS_InteractiveContext myAISContext;
    Handle_V3d_Viewer myV3dViewer;
    Handle_V3d_View myV3dView;
+   OpenGl_Context myGLContext;
 
    int mySizeX;
    int mySizeY;
