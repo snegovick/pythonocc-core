@@ -56,7 +56,7 @@ static const Handle(Standard_Transient)& WClass()
 
 Standard_Boolean Display3d::InitOffscreen(int size_x, int size_y)
 {
-  printf(" ###### 3D rendering pipe initialisation #####\n");
+  printf(" ###### 3D rendering pipe initialisation (InitOffscreen) #####\n");
   printf("Display3d class initialization starting ...\n");
 
   myIsOffscreen = true;
@@ -153,14 +153,15 @@ Standard_Boolean Display3d::GetImageData(const char* &data, size_t &size, const 
 
 void Display3d::Init(long window_handle)
 {
-  printf(" ###### 3D rendering pipe initialisation #####\n");
+  printf(" ###### 3D rendering pipe initialisation (Init) #####\n");
 	printf("Display3d class initialization starting ...\n");
 	// Create graphic driver
   Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
   printf("Aspect_DisplayConnection created.\n");
   if (GetGraphicDriver().IsNull())
   {
-  GetGraphicDriver() = new OpenGl_GraphicDriver (aDisplayConnection);
+  GetGraphicDriver() = new OpenGl_GraphicDriver (aDisplayConnection, false);
+  printf("OpenGL GraphicDriver constructed.\n");
   }
   printf("Graphic_Driver created.\n");
   GetGraphicDriver()->ChangeOptions().buffersNoSwap = Standard_True;
