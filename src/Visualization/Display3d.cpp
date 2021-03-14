@@ -54,6 +54,7 @@ Display3d::Display3d()
   GetGraphicDriver() = new OpenGl_GraphicDriver(aDisplayConnection);
   }
   printf("OpenGl_GraphicDriver created.\n");
+  GetGraphicDriver()->ChangeOptions().buffersNoSwap = Standard_True;
   // Create V3dViewer and V3d_View
   myV3dViewer = new V3d_Viewer(GetGraphicDriver());
   printf("V3d_Viewer created.\n");
