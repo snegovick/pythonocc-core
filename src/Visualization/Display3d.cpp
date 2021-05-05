@@ -151,7 +151,7 @@ Standard_Boolean Display3d::GetImageData(const char* &data, size_t &size, const 
   return false;
 }
 
-void Display3d::Init(long window_handle)
+void Display3d::Init(long window_handle, long gl_context)
 {
   printf(" ###### 3D rendering pipe initialisation (Init) #####\n");
 	printf("Display3d class initialization starting ...\n");
@@ -188,10 +188,21 @@ void Display3d::Init(long window_handle)
   #endif
   myGLContext = new OpenGl_Context();
   myGLContext->Init(Standard_True);
-  myV3dView->SetWindow(myWindow);
+  if (gl_context == -1) {
+    printf("No GL context supplied, leaving context creation to OCC");
+    myV3dView->SetWindow(myWindow);
+  } else {
+    printf("GL context supplied, using it");
+    myV3dView->SetWindow(myWindow, (Aspect_RenderingContext)gl_context);
+  }
   if (!myWindow->IsMapped()) myWindow->Map();
   printf("Display3d class successfully initialized.\n");
 	printf(" ########################################\n");
+}
+
+void Display3d::Init(long window_handle)
+{
+  Init(window_handle, -1);
 }
 
 void Display3d::ChangeRenderingParams(int Method,
