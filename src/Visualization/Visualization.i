@@ -42,7 +42,7 @@ class Display3d {
     %feature("autodoc", "1");
     void Init(const long handle);
     %feature("autodoc", "1");
-    void Init(const long handle, const long gl_context);
+    void Init(const long handle, const long gl_context, const long display);
     %feature("autodoc", "1");
     void SetAnaglyphMode(int mode);
     %feature("autodoc", "1");

@@ -53,7 +53,7 @@ public:
 	Standard_EXPORT Display3d();
 	Standard_EXPORT virtual ~Display3d();
 	Standard_EXPORT void Init(long window_handle);
-  Standard_EXPORT void Init(long window_handle, long gl_context);
+  Standard_EXPORT void Init(long window_handle, long gl_context, long display);
   Standard_EXPORT void SetAnaglyphMode(int mode);
   Standard_EXPORT void ChangeRenderingParams(int Method,
                                              Standard_Integer        RaytracingDepth,

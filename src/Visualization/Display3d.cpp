@@ -151,12 +151,18 @@ Standard_Boolean Display3d::GetImageData(const char* &data, size_t &size, const 
   return false;
 }
 
-void Display3d::Init(long window_handle, long gl_context)
+void Display3d::Init(long window_handle, long gl_context, long display)
 {
   printf(" ###### 3D rendering pipe initialisation (Init) #####\n");
 	printf("Display3d class initialization starting ...\n");
 	// Create graphic driver
-  Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
+  if (display == -1) {
+    printf("Creating graphic driver with default display connection\n");
+    Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
+  } else {
+    printf("Creating graphic driver with supplied display connection\n");
+    Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection((Display *)display);
+  }
   printf("Aspect_DisplayConnection created.\n");
   if (GetGraphicDriver().IsNull())
   {
@@ -189,10 +195,10 @@ void Display3d::Init(long window_handle, long gl_context)
   myGLContext = new OpenGl_Context();
   myGLContext->Init(Standard_True);
   if (gl_context == -1) {
-    printf("No GL context supplied, leaving context creation to OCC");
+    printf("No GL context supplied, leaving context creation to OCC\n");
     myV3dView->SetWindow(myWindow);
   } else {
-    printf("GL context supplied, using it");
+    printf("GL context supplied, using it\n");
     myV3dView->SetWindow(myWindow, (Aspect_RenderingContext)gl_context);
   }
   if (!myWindow->IsMapped()) myWindow->Map();
@@ -202,7 +208,7 @@ void Display3d::Init(long window_handle, long gl_context)
 
 void Display3d::Init(long window_handle)
 {
-  Init(window_handle, -1);
+  Init(window_handle, -1, -1);
 }
 
 void Display3d::ChangeRenderingParams(int Method,
