@@ -156,12 +156,13 @@ void Display3d::Init(long window_handle, long gl_context, long display)
   printf(" ###### 3D rendering pipe initialisation (Init) #####\n");
 	printf("Display3d class initialization starting ...\n");
 	// Create graphic driver
+  Handle(Aspect_DisplayConnection) aDisplayConnection;
   if (display == -1) {
     printf("Creating graphic driver with default display connection\n");
-    Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
+    aDisplayConnection = new Aspect_DisplayConnection();
   } else {
     printf("Creating graphic driver with supplied display connection\n");
-    Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection((Display *)display);
+    aDisplayConnection = new Aspect_DisplayConnection((Display *)display);
   }
   printf("Aspect_DisplayConnection created.\n");
   if (GetGraphicDriver().IsNull())
